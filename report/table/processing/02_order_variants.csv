@@ -1,0 +1,10 @@
+﻿,Thứ tự EASE,Đồng thuận với chính
+Ngày (r) | Ψ (hai đuôi),NVL → VNM → MSN → SAB → VIC → VHM → KDH → VCB → GAS → PLX → MWG → HPG → SSI → VPB → FPT → STB → BID → TCB → MBB → CTG,0.8842105263157894
+Ngày (r) | Γ (đuôi trên),NVL → SAB → VNM → VIC → VHM → KDH → FPT → GAS → PLX → MSN → MWG → HPG → VPB → VCB → SSI → STB → TCB → BID → MBB → CTG,0.8842105263157894
+Ngày (r) | Γ⁻ (đuôi dưới),NVL → SAB → MSN → VNM → KDH → VIC → VCB → VHM → GAS → PLX → FPT → HPG → VPB → SSI → MWG → STB → CTG → BID → MBB → TCB,0.8736842105263158
+GARCH (z) | Ψ (hai đuôi),NVL → VNM → SAB → KDH → VHM → VIC → MWG → MSN → FPT → VCB → PLX → GAS → HPG → STB → SSI → VPB → BID → MBB → CTG → TCB,1.0
+GARCH (z) | Γ (đuôi trên),NVL → SAB → KDH → VNM → MSN → FPT → MWG → HPG → SSI → VCB → STB → PLX → GAS → VPB → VHM → VIC → BID → MBB → CTG → TCB,0.8263157894736842
+GARCH (z) | Γ⁻ (đuôi dưới),NVL → VNM → SAB → VCB → GAS → VIC → KDH → VHM → PLX → FPT → MSN → HPG → STB → MWG → TCB → MBB → SSI → CTG → BID → VPB,0.8210526315789474
+Tuần | Ψ (hai đuôi),SAB → NVL → FPT → MSN → VNM → VIC → VHM → MWG → KDH → SSI → HPG → PLX → GAS → STB → VCB → BID → MBB → TCB → CTG → VPB,0.8263157894736842
+Tuần | Γ (đuôi trên),SAB → NVL → VNM → MSN → MWG → PLX → VHM → VIC → KDH → STB → SSI → HPG → GAS → BID → VCB → FPT → TCB → VPB → MBB → CTG,0.8105263157894737
+Tuần | Γ⁻ (đuôi dưới),NVL → SAB → VNM → VIC → VHM → FPT → KDH → MWG → PLX → GAS → VCB → MSN → SSI → MBB → HPG → CTG → BID → TCB → STB → VPB,0.868421052631579

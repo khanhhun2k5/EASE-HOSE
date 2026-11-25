@@ -1,0 +1,4 @@
+﻿,Thứ tự EASE
+5 mã + MKT,NVL → VHM → MKT → VPB → HPG → STB
+5 mã + VNI,NVL → VNI → VHM → VPB → HPG → STB
+5 mã + MKT + VNI,NVL → VHM → STB → HPG → VPB → MKT → VNI

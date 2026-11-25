@@ -1,0 +1,21 @@
+symbol,company_name,sector,exchange,listing_date,sort_order
+VCB,NH TMCP Ngoại thương Việt Nam,Ngân hàng,HOSE,,1
+BID,NH TMCP Đầu tư và Phát triển Việt Nam,Ngân hàng,HOSE,,2
+CTG,NH TMCP Công Thương Việt Nam,Ngân hàng,HOSE,,3
+TCB,NH TMCP Kỹ Thương Việt Nam,Ngân hàng,HOSE,2018-06-04,4
+MBB,NH TMCP Quân Đội,Ngân hàng,HOSE,,5
+STB,NH TMCP Sài Gòn Thương Tín,Ngân hàng,HOSE,2006-07-12,6
+VPB,NH TMCP Việt Nam Thịnh Vượng,Ngân hàng,HOSE,2017-08-17,7
+VIC,Tập đoàn Vingroup - CTCP,Bất động sản,HOSE,,8
+VHM,CTCP Vinhomes,Bất động sản,HOSE,2018-05-17,9
+NVL,CTCP Tập đoàn Đầu tư Địa ốc No Va,Bất động sản,HOSE,2016-12-28,10
+KDH,CTCP Đầu tư và Kinh doanh Nhà Khang Điền,Bất động sản,HOSE,,11
+VNM,CTCP Sữa Việt Nam,Tiêu dùng,HOSE,,12
+MSN,CTCP Tập đoàn Masan,Tiêu dùng,HOSE,,13
+SAB,Tổng CTCP Bia - Rượu - Nước giải khát Sài Gòn,Tiêu dùng,HOSE,2016-12-06,14
+MWG,CTCP Đầu tư Thế Giới Di Động,Tiêu dùng,HOSE,2014-07-14,15
+GAS,Tổng Công ty Khí Việt Nam - CTCP,Năng lượng,HOSE,,16
+PLX,Tập đoàn Xăng dầu Việt Nam,Năng lượng,HOSE,2017-04-21,17
+HPG,CTCP Tập đoàn Hòa Phát,Thép,HOSE,2007-11-15,18
+FPT,CTCP FPT,Công nghệ,HOSE,,19
+SSI,CTCP Chứng khoán SSI,Chứng khoán,HOSE,,20

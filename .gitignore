@@ -1,0 +1,27 @@
+# Bài báo PDF: không phân phối lại (bản quyền nhà xuất bản) — xem Paper/README.md
+Paper/*.pdf
+
+# Dữ liệu dựng lại được: python src/build_database.py
+data/interim/
+data/processed/
+
+# Đồ thị tri thức cục bộ
+graphify-out/
+
+# Python / Jupyter / công cụ
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+*.log
+
+# Hệ điều hành
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Dữ liệu cũ (12 mã ngoài mẫu của giai đoạn 5 mã), không còn dùng
+data/raw/market_ohlcv_long.csv

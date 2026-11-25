@@ -1,0 +1,44 @@
+# Python >= 3.10 (đã kiểm tra với 3.13). Cài: pip install -r requirements.txt
+# Phiên bản tối thiểu = phiên bản mới nhất đã chạy thử thành công toàn bộ dự án (26/11/2026: 162 test,
+# notebook EDA → Processing → Validation → Calibration).
+
+# --- Thu thập dữ liệu ---
+# vnstock 3.x (bản đang dùng, nguồn VCI, không cần khoá API) — CỐ Ý giữ 3.4.2, không nâng lên 6.x: từ thế hệ 6,
+# mọi nguồn giá cổ phiếu Việt Nam cần khoá Open API của công ty chứng khoán. Nếu cần thế hệ 6:
+#   pip install -U --extra-index-url https://vnstocks.com/api/packages "vnstock>=6.0.0,<7" "vnstock-oapi>=0.1.0,<1"
+vnstock>=3.4.2,<4
+
+# --- Lưu trữ & truy vấn ---
+duckdb>=2.0.1
+pyarrow>=26.0
+
+# --- Xử lý & thống kê ---
+numpy>=2.5
+pandas>=3.1
+scipy>=1.18
+statsmodels>=0.15
+scikit-learn>=1.9.1
+arch>=9.0              # GARCH-t, GJR-GARCH, EGARCH (src/tail_preprocessing.py, src/calibration.py)
+joblib>=1.6            # chạy song song mô phỏng, bootstrap, kiểm định hoán vị
+
+# --- Suy luận nhân quả ở đuôi (src/causal_*.py, src/validation.py, src/calibration.py) ---
+networkx>=3.7          # d-tách, SID (nx.is_d_separator)
+causal-learn>=0.1.4    # baseline Rank PC
+# lingam: baseline ICA-LiNGAM, Pairwise LiNGAM. Trên Windows/Python 3.13, một phụ thuộc phải biên dịch Cython
+# và cài lỗi; cài bỏ qua phụ thuộc rồi thêm đúng các gói cần để import:
+#   pip install --no-deps "lingam>=1.13" pygam psy progressbar autograd
+# (pip báo lingam/pygam "yêu cầu scipy cũ hơn" — đã kiểm tra: các lớp dùng trong dự án chạy đúng với scipy 1.18.)
+
+# --- Hình vẽ ---
+matplotlib>=3.11
+seaborn>=0.13
+
+# --- Notebook ---
+jupyter
+ipykernel>=7.4
+nbformat>=5.11
+nbconvert>=7.17
+
+# --- Kiểm thử (chạy: python -m pytest test) ---
+pytest>=9.2
+python-dotenv>=1.2     # tuỳ chọn: đọc khoá API từ .env (download_vnstock.py)

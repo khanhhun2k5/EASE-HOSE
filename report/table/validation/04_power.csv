@@ -1,0 +1,11 @@
+﻿canh,b,ease_dung_chieu,swap_bac_bo_dung_chieu
+CTG→BID,0.0,0.53,0.1
+CTG→BID,0.1,0.71,0.14
+CTG→BID,0.2,0.9,0.36
+CTG→BID,0.3,0.98,0.53
+CTG→BID,0.5,1.0,0.87
+MBB→SAB,0.0,0.0,0.54
+MBB→SAB,0.1,0.0,0.79
+MBB→SAB,0.2,0.02,0.85
+MBB→SAB,0.3,0.22,0.92
+MBB→SAB,0.5,0.55,0.98

@@ -1,0 +1,7 @@
+﻿Vấn đề,Phát hiện,Quyết định
+Phiên VHM trước 17/05/2018,"Giá đứng, khối lượng ≈ 0 (chưa niêm yết HOSE)",Loại khỏi phân tích (cờ is_listed = false)
+Khung phân tích chung,"TCB niêm yết 04/06/2018, VHM 17/05/2018, VPB 08/2017, NVL 12/2016; 16 mã còn lại có dữ liệu từ 2015 hoặc sớm hơn",Dùng 01/06/2018 → phiên cuối cho mọi mã; TCB thiếu 2 phiên đầu khung (loại bằng dropna khi cần ma trận chung)
+Mã mới có dữ liệu ngắn hơn lịch sử,15 mã mới không có giá 'ảo' trước niêm yết trong nguồn VCI,"Dùng nguyên, chỉ cắt theo khung chung"
+Biên độ giá HOSE ±7%,Lợi suất ngày bị chặn hai đầu,Giữ nguyên; lưu ý khi ước lượng đuôi (notebook 03)
+Giá đã điều chỉnh,Nguồn VCI điều chỉnh theo sự kiện quyền,Dùng trực tiếp để tính lợi suất
+Đơn vị,Giá: nghìn đồng; khối lượng: cổ phiếu,"Giữ nguyên, ghi trong data_dictionary.md"
