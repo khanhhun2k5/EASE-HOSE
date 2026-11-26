@@ -15,7 +15,8 @@ import pandas as pd
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DB_PATH = PROJECT_ROOT / "data" / "interim" / "stocks.duckdb"
 QUERY_FILE = PROJECT_ROOT / "sql" / "05_eda_queries.sql"
-FIG_DIR = PROJECT_ROOT / "report" / "figure" / "eda"
+FIG_DIR = PROJECT_ROOT / "report" / "figure" / "eda"   # hình raster (png)
+PDF_DIR = PROJECT_ROOT / "report" / "pdf" / "eda"      # hình vector (pdf), tách riêng để chèn vào báo cáo LaTeX
 TABLE_DIR = PROJECT_ROOT / "report" / "table" / "eda"
 
 from config import BASE_SYMBOLS, ORIGINAL_SYMBOLS, SECTOR, SECTORS, SYMBOLS  # noqa: E402  (danh mục mã dùng chung)
@@ -148,12 +149,21 @@ def make_heatmap(ax: plt.Axes, matrix: pd.DataFrame, cmap: str = "RdBu_r", vmin:
 
 def finalize_figure(fig: plt.Figure, name: str, formats: tuple[str, ...] = ("png", "pdf"),
                     pad: float = 1.0, folder: str | None = None) -> list[Path]:
-    """Căn bố cục và lưu hình vào report/figure/eda/<name>.<fmt> (hoặc report/figure/<folder>/)."""
-    out_dir = FIG_DIR if folder is None else PROJECT_ROOT / "report" / "figure" / folder
-    out_dir.mkdir(parents=True, exist_ok=True)
+    """Căn bố cục và lưu hình.
+
+    PDF → report/pdf/<folder>/<name>.pdf; định dạng khác → report/figure/<folder>/<name>.<fmt>
+    (folder mặc định là "eda").
+    """
+    if folder is None:
+        fig_dir, pdf_dir = FIG_DIR, PDF_DIR
+    else:
+        fig_dir = PROJECT_ROOT / "report" / "figure" / folder
+        pdf_dir = PROJECT_ROOT / "report" / "pdf" / folder
     fig.tight_layout(pad=pad)
     paths = []
     for fmt in formats:
+        out_dir = pdf_dir if fmt == "pdf" else fig_dir
+        out_dir.mkdir(parents=True, exist_ok=True)
         path = out_dir / f"{name}.{fmt}"
         fig.savefig(path, dpi=300, bbox_inches="tight", facecolor="white")
         paths.append(path)

@@ -105,10 +105,13 @@ def test_make_heatmap_annotates_cells_and_skips_nan():
 
 def test_finalize_figure_writes_requested_formats(monkeypatch, tmp_path):
     monkeypatch.setattr(U, "FIG_DIR", tmp_path / "hinh")
+    monkeypatch.setattr(U, "PDF_DIR", tmp_path / "pdf")
     fig, ax = plt.subplots()
     ax.plot([0, 1], [0, 1])
     paths = U.finalize_figure(fig, "duong_thang", formats=("png", "pdf"))
     plt.close(fig)
     assert [p.name for p in paths] == ["duong_thang.png", "duong_thang.pdf"]
+    # png ở thư mục hình, pdf tách sang thư mục pdf riêng
+    assert paths[0].parent == tmp_path / "hinh" and paths[1].parent == tmp_path / "pdf"
     assert all(p.exists() and p.stat().st_size > 0 for p in paths)
     assert paths[0].read_bytes()[:4] == b"\x89PNG"
