@@ -24,9 +24,10 @@ vnstock (nguồn VCI)
                  └─ notebook/EDA/01..04 ──► report/figure/eda, report/table/eda
                  └─ notebook/Processing/02 ──► data/processed/garch_std_resid.parquet          (phần dư GARCH)
                       └─ notebook/Processing/01, 02, Processing_finding ──► report/figure/processing, report/table/processing
-vnstock (VCI) └─ src/download_market.py ──► data/raw/vnindex_ohlcv.csv, market_ohlcv_long.csv   (Validation)
+vnstock (VCI) └─ src/download_market.py ──► data/raw/vnindex_ohlcv.csv                         (Validation)
        └─ notebook/Validation/01 ──► data/processed/garch_std_resid_market.parquet
             └─ notebook/Validation/01..04, Validation_finding ──► report/figure/validation, report/table/validation
+            └─ notebook/Calibration/01..03, Calibration_finding ──► report/figure/calibration, report/table/calibration
 ```
 
 Dựng lại toàn bộ từ đầu:
@@ -70,17 +71,17 @@ python src/build_database.py                  # dựng CSDL DuckDB
 | `time` | ngày | Ngày giao dịch |
 | `VCB`, `BID`, `CTG`, `TCB`, `MBB`, `STB`, `VPB`, `VIC`, `VHM`, `NVL`, `KDH`, `VNM`, `MSN`, `SAB`, `MWG`, `GAS`, `PLX`, `HPG`, `FPT`, `SSI` (20 cột, 2.969 dòng) | số thực | Giá đóng cửa (nghìn đồng); để trống nếu mã chưa có dữ liệu ngày đó |
 
-### 3.3. `vnindex_ohlcv.csv` và `market_ohlcv_long.csv` (giai đoạn Validation)
+### 3.3. `vnindex_ohlcv.csv` (giai đoạn Validation, Calibration)
 
 Tải bằng `python src/download_market.py` (vnstock 3.x, nguồn VCI, không cần khoá), từ 18/06/2014 đến phiên cuối.
 
 | Tệp | Cột | Nội dung |
 |---|---|---|
 | `vnindex_ohlcv.csv` | `time`, `open`, `high`, `low`, `close`, `volume` | Chỉ số VN-Index (điểm), khối lượng toàn sàn |
-| `market_ohlcv_long.csv` | `symbol`, `time`, `open`, `high`, `low`, `close`, `volume` | 12 mã vốn hoá lớn HOSE **ngoài** 5 mã nghiên cứu: VCB, BID, CTG, TCB, MBB, VNM, SAB, MSN, FPT, MWG, GAS, PLX (giá nghìn đồng, đã điều chỉnh). TCB từ 04/06/2018, SAB từ 06/12/2016, PLX từ 21/04/2017 |
 
-Nhân tố thị trường ngoài mẫu `MKT_t` = trung bình đều lợi suất log ngày của các mã có giao dịch ở phiên t (cần ≥ 8 mã),
-tính bằng `download_market.market_factor`. Không dùng VN-Index làm nhân tố chính vì VN-Index chứa chính 5 mã nghiên cứu.
+Nhân tố thị trường dùng trong phân tích có hai dạng: `VNI` (lợi suất log VN-Index, lọc GARCH) — đại diện chính thức nhưng **chứa chính 20 mã**
+(gia quyền vốn hoá); và thị trường **leave-one-out** $\bar z_{-i,t}$ = trung bình phần dư GARCH của 19 mã khác $i$ (`validation.loo_market`), không chứa mã $i$.
+(Giai đoạn 5 mã từng dùng nhân tố "ngoài mẫu" từ 12 mã lớn khác; các mã đó nay đã nằm trong danh mục 20 mã nên cách này không còn dùng.)
 
 ## 4. CSDL DuckDB — `data/interim/stocks.duckdb`
 
@@ -150,18 +151,18 @@ Bản Parquet của `daily_features`, cùng cột và kiểu, dùng khi không c
 ### 5.1. `data/processed/garch_std_resid.parquet` — phần dư GARCH chuẩn hoá
 
 Tạo bởi `notebook/Processing/02_ease_real_data.ipynb` (hàm `tail_preprocessing.garch_standardize`). Chỉ mục `time`
-(2.120 phiên trong khung phân tích), 5 cột `VHM`, `NVL`, `STB`, `VPB`, `HPG`.
+(2.118 phiên chung của 20 mã trong khung phân tích), 20 cột theo `sort_order` của danh mục.
 
 | Giá trị | Công thức |
 |---|---|
 | $z_{i,t}$ (không đơn vị) | $(r_{i,t} - \hat\mu_i)/\hat\sigma_{i,t}$ với $\hat\sigma_{i,t}$ từ GARCH(1,1), nhiễu Student-t, khớp trên $100\,r_{i,t}$ |
 
-Dùng cho EASE vì đã loại hiệu ứng ARCH (Ljung–Box của $z^2$ không có ý nghĩa ở cả 5 mã).
+Dùng cho EASE vì đã loại hiệu ứng ARCH (Ljung–Box của $z^2$ không có ý nghĩa ở cả 20 mã).
 
 ### 5.2. `data/processed/garch_std_resid_market.parquet` — phần dư GARCH kèm nhân tố thị trường
 
-Tạo bởi `notebook/Validation/01_market_factor.ipynb`. Cùng cách tính như 5.1, 7 cột: 5 mã + `MKT` + `VNI` (lợi suất log VN-Index),
-chỉ giữ các phiên cả 7 chuỗi đều có giá trị (2.120 phiên).
+Tạo bởi `notebook/Validation/01_market_factor.ipynb`. Cùng cách tính như 5.1, 21 cột: 20 mã + `VNI` (lợi suất log VN-Index),
+chỉ giữ các phiên cả 21 chuỗi đều có giá trị (2.118 phiên). Dùng cho Validation và Calibration.
 
 ## 6. Ghi chú chất lượng dữ liệu
 

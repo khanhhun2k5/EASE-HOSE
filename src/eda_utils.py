@@ -29,7 +29,7 @@ PALETTE = {
 }
 # Mỗi ngành một họ màu, mỗi mã một sắc độ trong họ màu đó (cố định trong mọi hình).
 SECTOR_CMAPS = {"Ngân hàng": "Blues", "Bất động sản": "Reds", "Tiêu dùng": "Greens", "Năng lượng": "Oranges",
-                "Thép": "Purples", "Công nghệ": "BuGn", "Chứng khoán": "Greys"}
+                "Thép": "Purples", "Công nghệ": "PuRd", "Chứng khoán": "Greys"}
 SECTOR_COLORS = {sec: mpl.colormaps[SECTOR_CMAPS.get(sec, "Greys")](0.75) for sec in SECTORS}
 
 
