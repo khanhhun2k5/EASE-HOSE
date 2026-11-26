@@ -1,9 +1,9 @@
 # Suy luận nhân quả ở đuôi phân phối lợi suất cổ phiếu HOSE
 
-Đồ án II — phân tích các cú sốc cực trị (tăng/giảm rất mạnh) của **60 cổ phiếu trên HOSE** thuộc 10 ngành (2018–2026) và câu hỏi:
+Dự án phân tích các cú sốc cực trị (tăng/giảm rất mạnh) của **60 cổ phiếu trên HOSE** thuộc 10 ngành (2018–2026) và câu hỏi:
 *cú sốc cực trị của mã này có kéo theo cú sốc của mã khác không, và theo chiều nào?*
 
-Phương pháp chính là **hệ số nhân quả đuôi** và thuật toán **EASE** (Gnecco, Meinshausen, Peters & Engelke, 2021),
+Phương pháp chính là **hệ số nhân quả đuôi** và thuật toán **EASE** (Gnecco 2021),
 đối chiếu với các phương pháp nền (Pairwise LiNGAM, ICA-LiNGAM, Rank PC), rồi kiểm chứng và hiệu chỉnh cho đặc thù thị trường
 Việt Nam: biên độ giá ±7%, biến động cụm, nhân tố thị trường chung.
 
@@ -51,6 +51,4 @@ Sau đó chạy notebook theo thứ tự EDA → Processing → Validation → C
 
 ## Tình trạng
 
-Ngày 26/11/2026 mẫu nghiên cứu được mở rộng từ 20 lên **60 mã** (40 mã bổ sung chọn bằng `src/download_extended.py`) và toàn bộ 18 notebook
-(EDA → Processing → Validation → Calibration, kể cả các notebook tổng hợp `*_finding.ipynb`) đã chạy lại và viết lại phần nhận xét cho 60 mã.
-Chạy toàn bộ mất khoảng 3 giờ trên 12 lõi (nặng nhất: mô phỏng $p = 60$ ở Processing 01 ≈ 55 phút, Granger trong đuôi ở Calibration 03).
+Ngày 26/11/2026 mẫu nghiên cứu được mở rộng từ 20 lên **60 mã**.
