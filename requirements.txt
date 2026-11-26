@@ -20,6 +20,9 @@ statsmodels>=0.15
 scikit-learn>=1.9.1
 arch>=9.0              # GARCH-t, GJR-GARCH, EGARCH (src/tail_preprocessing.py, src/calibration.py)
 joblib>=1.6            # chạy song song mô phỏng, bootstrap, kiểm định hoán vị
+# autoencoder khử nhân tố phi tuyến (src/nonlinear_factor.py); bản CPU là đủ:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+torch>=2.7
 
 # --- Suy luận nhân quả ở đuôi (src/causal_*.py, src/validation.py, src/calibration.py) ---
 networkx>=3.7          # d-tách, SID (nx.is_d_separator)

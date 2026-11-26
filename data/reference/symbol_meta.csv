@@ -6,16 +6,56 @@ TCB,NH TMCP Kỹ Thương Việt Nam,Ngân hàng,HOSE,2018-06-04,4
 MBB,NH TMCP Quân Đội,Ngân hàng,HOSE,,5
 STB,NH TMCP Sài Gòn Thương Tín,Ngân hàng,HOSE,2006-07-12,6
 VPB,NH TMCP Việt Nam Thịnh Vượng,Ngân hàng,HOSE,2017-08-17,7
-VIC,Tập đoàn Vingroup - CTCP,Bất động sản,HOSE,,8
-VHM,CTCP Vinhomes,Bất động sản,HOSE,2018-05-17,9
-NVL,CTCP Tập đoàn Đầu tư Địa ốc No Va,Bất động sản,HOSE,2016-12-28,10
-KDH,CTCP Đầu tư và Kinh doanh Nhà Khang Điền,Bất động sản,HOSE,,11
-VNM,CTCP Sữa Việt Nam,Tiêu dùng,HOSE,,12
-MSN,CTCP Tập đoàn Masan,Tiêu dùng,HOSE,,13
-SAB,Tổng CTCP Bia - Rượu - Nước giải khát Sài Gòn,Tiêu dùng,HOSE,2016-12-06,14
-MWG,CTCP Đầu tư Thế Giới Di Động,Tiêu dùng,HOSE,2014-07-14,15
-GAS,Tổng Công ty Khí Việt Nam - CTCP,Năng lượng,HOSE,,16
-PLX,Tập đoàn Xăng dầu Việt Nam,Năng lượng,HOSE,2017-04-21,17
-HPG,CTCP Tập đoàn Hòa Phát,Thép,HOSE,2007-11-15,18
-FPT,CTCP FPT,Công nghệ,HOSE,,19
-SSI,CTCP Chứng khoán SSI,Chứng khoán,HOSE,,20
+HDB,Ngân hàng TMCP Phát triển Thành phố Hồ Chí Minh,Ngân hàng,HOSE,,8
+EIB,Ngân hàng TMCP Xuất nhập khẩu Việt Nam,Ngân hàng,HOSE,,9
+TPB,Ngân hàng TMCP Tiên Phong,Ngân hàng,HOSE,,10
+VIC,Tập đoàn Vingroup - CTCP,Bất động sản,HOSE,,11
+VHM,CTCP Vinhomes,Bất động sản,HOSE,2018-05-17,12
+NVL,CTCP Tập đoàn Đầu tư Địa ốc No Va,Bất động sản,HOSE,2016-12-28,13
+KDH,CTCP Đầu tư và Kinh doanh Nhà Khang Điền,Bất động sản,HOSE,,14
+CII,CTCP Đầu tư Hạ tầng Kỹ thuật Thành phố Hồ Chí Minh,Bất động sản,HOSE,,15
+VRE,CTCP Vincom Retail,Bất động sản,HOSE,,16
+DXG,CTCP Bluemarq Group,Bất động sản,HOSE,,17
+PDR,CTCP Phát triển Bất động sản Phát Đạt,Bất động sản,HOSE,,18
+DIG,Tổng Công ty cổ phần Đầu tư Phát triển Xây dựng,Bất động sản,HOSE,,19
+KBC,Tổng Công ty Phát triển Đô thị Kinh Bắc - CTCP,Bất động sản,HOSE,,20
+TCH,CTCP Đầu tư Dịch vụ Tài chính Hoàng Huy,Bất động sản,HOSE,,21
+NLG,CTCP Đầu tư Nam Long,Bất động sản,HOSE,,22
+HDG,CTCP Tập đoàn Hà Đô,Bất động sản,HOSE,,23
+HDC,CTCP Phát triển Nhà Bà Rịa - Vũng Tàu,Bất động sản,HOSE,,24
+VNM,CTCP Sữa Việt Nam,Tiêu dùng,HOSE,,25
+MSN,CTCP Tập đoàn Masan,Tiêu dùng,HOSE,,26
+SAB,Tổng CTCP Bia - Rượu - Nước giải khát Sài Gòn,Tiêu dùng,HOSE,2016-12-06,27
+MWG,CTCP Đầu tư Thế Giới Di Động,Tiêu dùng,HOSE,2014-07-14,28
+FRT,CTCP Bán lẻ Kỹ thuật số FPT,Tiêu dùng,HOSE,,29
+DGW,CTCP Thế Giới Số,Tiêu dùng,HOSE,,30
+PNJ,CTCP Vàng bạc Đá quý Phú Nhuận,Tiêu dùng,HOSE,,31
+VHC,CTCP Vĩnh Hoàn,Tiêu dùng,HOSE,,32
+TCM,CTCP Dệt may - Đầu tư - Thương mại Thành Công,Tiêu dùng,HOSE,,33
+ANV,CTCP Nam Việt,Tiêu dùng,HOSE,,34
+GAS,Tổng Công ty Khí Việt Nam - CTCP,Năng lượng,HOSE,,35
+PLX,Tập đoàn Xăng dầu Việt Nam,Năng lượng,HOSE,2017-04-21,36
+GEX,CTCP Tập đoàn GELEX,Năng lượng,HOSE,,37
+POW,Tổng Công ty Điện lực Dầu khí Việt Nam - CTCP,Năng lượng,HOSE,,38
+PVD,Tổng Công ty cổ phần Khoan và Dịch vụ khoan Dầu khí,Năng lượng,HOSE,,39
+PVT,Tổng Công ty cổ phần Vận tải Dầu khí,Năng lượng,HOSE,,40
+PC1,CTCP Tập Đoàn PC1,Năng lượng,HOSE,,41
+REE,CTCP Cơ Điện Lạnh,Năng lượng,HOSE,,42
+HPG,CTCP Tập đoàn Hòa Phát,Thép,HOSE,2007-11-15,43
+NKG,CTCP Thép Nam Kim,Thép,HOSE,,44
+HSG,CTCP Tập đoàn Hoa Sen,Thép,HOSE,,45
+DGC,CTCP Tập đoàn Hóa chất Đức Giang,Hoá chất,HOSE,,46
+DCM,CTCP - Tổng công ty Phân bón Dầu khí Cà Mau,Hoá chất,HOSE,,47
+DPM,Tổng công ty Phân bón và Hóa chất Dầu khí - CTCP,Hoá chất,HOSE,,48
+VJC,CTCP Hàng không Vietjet,Công nghiệp,HOSE,,49
+VSC,CTCP Container Việt Nam,Công nghiệp,HOSE,,50
+HAH,CTCP Vận tải và Xếp dỡ Hải An,Công nghiệp,HOSE,,51
+GMD,CTCP Tập đoàn Gemadept,Công nghiệp,HOSE,,52
+CTD,CTCP Xây dựng Coteccons,Công nghiệp,HOSE,,53
+FPT,CTCP FPT,Công nghệ,HOSE,,54
+SSI,CTCP Chứng khoán SSI,Chứng khoán,HOSE,,55
+VCI,CTCP Chứng khoán Vietcap,Chứng khoán,HOSE,,56
+HCM,CTCP Chứng khoán Thành phố Hồ Chí Minh,Chứng khoán,HOSE,,57
+FTS,CTCP Chứng khoán FPT,Chứng khoán,HOSE,,58
+CTS,CTCP Chứng khoán VietinBank,Chứng khoán,HOSE,,59
+HAG,CTCP Hoàng Anh Gia Lai,Nông nghiệp,HOSE,,60

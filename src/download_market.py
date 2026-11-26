@@ -1,8 +1,8 @@
 """Tải chỉ số VN-Index (biến thị trường quan sát được) cho các giai đoạn Validation và Calibration.
 
-Từ khi mở rộng lên 20 mã, các mã vốn hoá lớn từng dùng dựng nhân tố "ngoài mẫu" đã nằm trong mẫu nghiên cứu,
+Từ khi mở rộng lên 20 rồi 60 mã, các mã vốn hoá lớn từng dùng dựng nhân tố "ngoài mẫu" đã nằm trong mẫu nghiên cứu,
 nên nhân tố thị trường được dựng theo hai cách bổ sung cho nhau:
-- **VNI**: lợi suất log VN-Index (file này tải) — đại diện chính thức, nhưng chứa chính 20 mã (gia quyền vốn hoá).
+- **VNI**: lợi suất log VN-Index (file này tải) — đại diện chính thức, nhưng chứa chính các mã nghiên cứu (gia quyền vốn hoá).
 - **MKT_LOO**: với mỗi mã i, trung bình đều lợi suất của 19 mã còn lại (``validation.loo_market``) — không chứa i.
 
 Cách chạy (vnstock 3.x, nguồn VCI, không cần khoá; xem ghi chú phiên bản trong download_vnstock.py):

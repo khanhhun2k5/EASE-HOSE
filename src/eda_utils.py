@@ -18,7 +18,7 @@ QUERY_FILE = PROJECT_ROOT / "sql" / "05_eda_queries.sql"
 FIG_DIR = PROJECT_ROOT / "report" / "figure" / "eda"
 TABLE_DIR = PROJECT_ROOT / "report" / "table" / "eda"
 
-from config import ORIGINAL_SYMBOLS, SECTOR, SECTORS, SYMBOLS  # noqa: E402  (danh mục mã dùng chung)
+from config import BASE_SYMBOLS, ORIGINAL_SYMBOLS, SECTOR, SECTORS, SYMBOLS  # noqa: E402  (danh mục mã dùng chung)
 
 PALETTE = {
     "blue_main": "#0F4D92", "blue_secondary": "#3775BA",
@@ -29,7 +29,8 @@ PALETTE = {
 }
 # Mỗi ngành một họ màu, mỗi mã một sắc độ trong họ màu đó (cố định trong mọi hình).
 SECTOR_CMAPS = {"Ngân hàng": "Blues", "Bất động sản": "Reds", "Tiêu dùng": "Greens", "Năng lượng": "Oranges",
-                "Thép": "Purples", "Công nghệ": "PuRd", "Chứng khoán": "Greys"}
+                "Thép": "Purples", "Công nghệ": "copper", "Chứng khoán": "Greys",
+                "Hoá chất": "cividis", "Công nghiệp": "RdPu", "Nông nghiệp": "Wistia"}
 SECTOR_COLORS = {sec: mpl.colormaps[SECTOR_CMAPS.get(sec, "Greys")](0.75) for sec in SECTORS}
 
 
@@ -93,10 +94,31 @@ def apply_publication_style(font_size: int = 13, axes_linewidth: float = 1.5) ->
     })
 
 
+def year_axis(ax: plt.Axes, step: int = 2, labelsize: float = 7) -> None:
+    """Nhãn trục thời gian mỗi ``step`` năm (dùng cho lưới nhiều ô nhỏ)."""
+    import matplotlib.dates as mdates
+    ax.xaxis.set_major_locator(mdates.YearLocator(step))
+    ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
+    ax.tick_params(axis="x", labelsize=labelsize)
+
+
+def symbol_grid(n: int | None = None, ncols: int = 10) -> tuple[int, int]:
+    """(số hàng, số cột) cho lưới một ô mỗi mã: 10 cột (60 mã → 6 × 10); ít mã hơn 10 thì một hàng."""
+    n = len(SYMBOLS) if n is None else n
+    ncols = min(ncols, n)
+    return int(np.ceil(n / ncols)), ncols
+
+
+def symbol_grid_size(cell_w: float = 3.0, cell_h: float = 2.3, n: int | None = None) -> tuple[float, float]:
+    """Kích thước hình (inch) cho ``symbol_grid``: mỗi ô cell_w × cell_h."""
+    rows, cols = symbol_grid(n)
+    return cols * cell_w, rows * cell_h
+
+
 def make_heatmap(ax: plt.Axes, matrix: pd.DataFrame, cmap: str = "RdBu_r", vmin: float = -1,
                  vmax: float = 1, fmt: str | None = "{:.2f}", cbar_label: str | None = None,
                  title: str | None = None, annot_fontsize: float = 10, tick_fontsize: float | None = None):
-    """Heatmap có chú thích giá trị trong ô (``fmt=None``: không ghi số — dùng cho ma trận lớn như 20 × 20);
+    """Heatmap có chú thích giá trị trong ô (``fmt=None``: không ghi số — dùng cho ma trận lớn như 60 × 60);
     chữ tự đổi màu theo độ đậm của nền. ``tick_fontsize``: cỡ chữ nhãn trục (mặc định theo rcParams)."""
     im = ax.imshow(matrix.values, cmap=cmap, vmin=vmin, vmax=vmax, aspect="auto")
     rot = 90 if matrix.shape[1] > 10 else 0

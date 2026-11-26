@@ -1,6 +1,7 @@
 """Tải giá lịch sử (OHLCV ngày) của các mã HOSE trong data/reference/symbol_meta.csv bằng thư viện vnstock.
 
-Mã: 20 mã vốn hoá lớn chia theo ngành (xem src/config.py).
+Mã: 60 mã chia theo ngành (xem src/config.py). Gói khách của vnstock giới hạn 20 request/phút và tự dừng tiến trình
+khi vượt, nên mặc định nghỉ 3,5 giây giữa hai mã (≈ 4 phút cho 60 mã).
 
 Cách chạy (từ thư mục gốc đồ án):
     python src/download_vnstock.py                      # cài lại vnstock mới nhất rồi tải
@@ -32,7 +33,7 @@ import time
 from datetime import date
 from pathlib import Path
 
-from config import SYMBOLS  # noqa: E402  (20 mã, danh mục data/reference/symbol_meta.csv)
+from config import SYMBOLS  # noqa: E402  (60 mã, danh mục data/reference/symbol_meta.csv)
 EXCHANGE = "HOSE"
 VNSTOCK_INDEX = "https://vnstocks.com/api/packages"
 
@@ -99,11 +100,12 @@ def fetch_one(symbol: str, start: str, end: str, major: int, source: str):
     return Quote(source=source.upper(), symbol=symbol).history(start=start, end=end, interval="1D")
 
 
-def download(start: str, end: str, major: int, source: str, pause: float):
+def download(start: str, end: str, major: int, source: str, pause: float, symbols: list[str] | None = None):
+    """Tải lần lượt từng mã (mặc định ``SYMBOLS``); trả (DataFrame dạng dài hoặc None, {mã lỗi: thông báo})."""
     import pandas as pd
 
     frames, failed = [], {}
-    for symbol in SYMBOLS:
+    for symbol in (SYMBOLS if symbols is None else symbols):
         try:
             df = fetch_one(symbol, start, end, major, source)
         except Exception as exc:  # ghi lỗi từng mã, không dừng cả lượt tải
@@ -137,7 +139,7 @@ def main() -> int:
     parser.add_argument("--source", default=None,
                         help="Nguồn dữ liệu. v6: tcbs|fhsc|ssi|dnse; bản cũ: vci|kbs")
     parser.add_argument("--no-upgrade", action="store_true", help="Không cài lại vnstock")
-    parser.add_argument("--pause", type=float, default=1.0, help="Số giây nghỉ giữa hai mã")
+    parser.add_argument("--pause", type=float, default=3.5, help="Số giây nghỉ giữa hai mã")
     args = parser.parse_args()
 
     if not args.no_upgrade:

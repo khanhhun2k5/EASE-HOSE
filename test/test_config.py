@@ -9,8 +9,8 @@ import config
 import eda_utils as U
 
 
-def test_real_catalogue_has_20_symbols_grouped_by_sector():
-    assert len(config.SYMBOLS) == 20 and len(set(config.SYMBOLS)) == 20
+def test_real_catalogue_has_60_symbols_grouped_by_sector():
+    assert len(config.SYMBOLS) == 60 and len(set(config.SYMBOLS)) == 60
     assert set(config.ORIGINAL_SYMBOLS) <= set(config.SYMBOLS)
     assert all(s.isalnum() and s.isupper() for s in config.SYMBOLS)
     # mỗi ngành là một khối liền nhau theo sort_order
@@ -20,7 +20,7 @@ def test_real_catalogue_has_20_symbols_grouped_by_sector():
 
 def test_every_symbol_has_a_distinct_colour():
     assert set(U.SYMBOL_COLORS) == set(config.SYMBOLS)
-    assert len(set(U.SYMBOL_COLORS.values())) == 20
+    assert len(set(U.SYMBOL_COLORS.values())) == 60
     assert set(U.SECTOR_COLORS) == set(config.SECTORS)
 
 

@@ -1,0 +1,91 @@
+symbol,sector,first_date,missing_share,n_breaches,median_value,eligible,reason,rank,selected
+GEX,Năng lượng,2015-10-26,0.0,0,241.49029338,True,,1.0,True
+HDB,Ngân hàng,2018-01-05,0.0,0,220.19799073999997,True,,2.0,True
+VCI,Chứng khoán,2017-07-07,0.0,0,204.27358566,True,,3.0,True
+CII,Bất động sản,2015-01-05,0.0,0,191.564355,True,,4.0,True
+VRE,Bất động sản,2017-11-06,0.0,0,167.01432,True,,5.0,True
+DXG,Bất động sản,2015-01-05,0.0,0,162.36647456999998,True,,6.0,True
+HCM,Chứng khoán,2015-01-05,0.0,0,160.51325767999998,True,,7.0,True
+EIB,Ngân hàng,2015-01-05,0.0,0,146.376,True,,8.0,True
+VJC,Công nghiệp,2017-02-28,0.0,0,137.3155695,True,,9.0,True
+PDR,Bất động sản,2015-01-05,0.0,0,137.0112,True,,10.0,True
+DIG,Bất động sản,2015-01-05,0.0,0,136.41297973999997,True,,11.0,True
+TPB,Ngân hàng,2018-04-19,0.0,0,123.95072160000001,True,,12.0,True
+VSC,Công nghiệp,2015-01-05,0.0,0,115.65089424000001,True,,13.0,True
+KBC,Bất động sản,2015-01-05,0.0,0,112.19576,True,,14.0,True
+DGC,Vật liệu,2015-01-05,0.002830188679245338,2,107.96524339,True,,15.0,True
+POW,Năng lượng,2018-03-06,0.004245283018867951,1,99.62291955,True,,16.0,True
+TCH,Bất động sản,2016-10-05,0.0,0,88.69964184,True,,17.0,True
+DCM,Vật liệu,2015-03-31,0.0,0,86.08198732,True,,18.0,True
+HAG,Nông nghiệp,2015-01-05,0.0,0,75.330065,True,,19.0,True
+DPM,Vật liệu,2015-01-05,0.0,0,68.888135,True,,20.0,True
+HAH,Công nghiệp,2015-03-11,0.0,0,68.58418816,True,,21.0,True
+PVD,Năng lượng,2015-01-05,0.0,0,68.32465946,True,,22.0,True
+GMD,Công nghiệp,2015-01-05,0.0,0,65.82167416,True,,23.0,True
+NLG,Bất động sản,2015-01-05,0.0,0,65.36432721999999,True,,24.0,True
+NKG,Vật liệu,2015-01-05,0.0,0,60.93918018,True,,25.0,True
+FRT,Tiêu dùng,2018-04-26,0.0,0,58.934636780000005,True,,26.0,True
+PVT,Năng lượng,2015-01-05,0.0,0,55.44460946,True,,27.0,True
+DGW,Tiêu dùng,2015-08-03,0.0,0,55.24426271,True,,28.0,True
+CTD,Công nghiệp,2015-01-05,0.0,0,54.57088,True,,29.0,True
+PNJ,Tiêu dùng,2015-01-05,0.0,0,53.93117756,True,,30.0,True
+HDG,Bất động sản,2015-01-05,0.0,0,52.860325620000005,True,,31.0,True
+HSG,Vật liệu,2015-01-05,0.0,0,47.424469300000005,True,,32.0,True
+VHC,Tiêu dùng,2015-01-05,0.0,0,45.50091308,True,,33.0,True
+HDC,Bất động sản,2015-01-05,0.0,0,45.47670750000001,True,,34.0,True
+PC1,Năng lượng,2016-11-16,0.0,0,41.001176699999995,True,,35.0,True
+FTS,Chứng khoán,2017-01-13,0.0,0,38.62931904,True,,36.0,True
+TCM,Tiêu dùng,2015-01-05,0.0,0,36.72846113,True,,37.0,True
+REE,Năng lượng,2015-01-05,0.0,0,30.61124675,True,,38.0,True
+CTS,Chứng khoán,2015-01-05,0.0,0,26.96380815,True,,39.0,True
+ANV,Tiêu dùng,2015-01-05,0.0,0,24.826686780000003,True,,40.0,True
+CSV,Vật liệu,2015-03-18,0.0,0,20.85828966,True,thanh khoản thấp hơn top n,41.0,False
+SBT,Tiêu dùng,2015-01-05,0.0,0,20.03680328,True,thanh khoản thấp hơn top n,42.0,False
+IJC,Bất động sản,2015-01-05,0.0,0,18.820060429999998,True,thanh khoản thấp hơn top n,43.0,False
+DPR,Vật liệu,2015-01-05,0.0,0,17.788797600000002,True,thanh khoản thấp hơn top n,44.0,False
+KDC,Tiêu dùng,2015-01-05,0.0,0,16.44260973,True,thanh khoản thấp hơn top n,45.0,False
+BMP,Vật liệu,2015-01-05,0.0,0,16.27865043,True,thanh khoản thấp hơn top n,46.0,False
+CMG,Công nghệ,2015-01-05,0.0,0,15.208524,True,thanh khoản thấp hơn top n,47.0,False
+NT2,Năng lượng,2015-01-05,0.0,0,15.16354032,True,thanh khoản thấp hơn top n,48.0,False
+NTL,Bất động sản,2015-01-05,0.0,0,14.59076715,True,thanh khoản thấp hơn top n,49.0,False
+LCG,Công nghiệp,2015-01-05,0.0,0,13.66817826,True,thanh khoản thấp hơn top n,50.0,False
+SCR,Bất động sản,2015-01-05,0.0,0,13.664007,True,thanh khoản thấp hơn top n,51.0,False
+BFC,Vật liệu,2015-10-07,0.0,0,12.4568717,True,thanh khoản thấp hơn top n,52.0,False
+PHR,Vật liệu,2015-01-05,0.0,0,11.25682976,True,thanh khoản thấp hơn top n,53.0,False
+AAA,Vật liệu,2015-01-05,0.0,0,10.02466334,True,thanh khoản thấp hơn top n,54.0,False
+ELC,Công nghệ,2015-01-05,0.0,0,9.408,True,thanh khoản thấp hơn top n,55.0,False
+AGR,Chứng khoán,2015-01-05,0.0,0,7.1340345,True,thanh khoản thấp hơn top n,56.0,False
+GEG,Năng lượng,2017-03-21,0.002830188679245338,2,6.6840576,True,thanh khoản thấp hơn top n,57.0,False
+BWE,Năng lượng,2017-07-20,0.0,0,5.2322814,True,thanh khoản thấp hơn top n,58.0,False
+HT1,Vật liệu,2015-01-05,0.0,0,4.68031984,True,thanh khoản thấp hơn top n,59.0,False
+PTB,Công nghiệp,2015-01-05,0.0,0,3.46314123,True,thanh khoản thấp hơn top n,60.0,False
+DBD,Y tế,2017-01-16,0.002358490566037763,0,2.5860686399999997,True,thanh khoản thấp hơn top n,61.0,False
+PPC,Năng lượng,2015-01-05,0.0,0,2.37563865,True,thanh khoản thấp hơn top n,62.0,False
+IMP,Y tế,2015-01-05,0.0,0,2.2329252000000004,True,thanh khoản thấp hơn top n,63.0,False
+DHG,Y tế,2015-01-05,0.0,0,1.1344175,True,thanh khoản thấp hơn top n,64.0,False
+SKG,Công nghiệp,2015-01-05,0.0,0,0.8597448,True,thanh khoản thấp hơn top n,65.0,False
+STK,Tiêu dùng,2015-09-30,0.0,0,0.29160711,True,thanh khoản thấp hơn top n,66.0,False
+VSH,Năng lượng,2015-01-05,0.0,0,0.2512573,True,thanh khoản thấp hơn top n,67.0,False
+ACB,Ngân hàng,2015-01-05,0.002358490566037763,8,203.34821591999997,False,8 phiên |r| > 7.5% (lịch sử ngoài HOSE?),,False
+AGG,Bất động sản,2020-01-09,0.1910377358490566,1,4.737906,False,dữ liệu bắt đầu sau 2018-06-01,,False
+BAF,Nông nghiệp,2021-12-03,0.4155660377358491,0,62.70398285,False,dữ liệu bắt đầu sau 2018-06-01,,False
+BSI,Chứng khoán,2015-01-05,0.002830188679245338,13,17.919094649999998,False,13 phiên |r| > 7.5% (lịch sử ngoài HOSE?),,False
+DBC,Nông nghiệp,2015-01-05,0.002830188679245338,11,82.61566748,False,11 phiên |r| > 7.5% (lịch sử ngoài HOSE?),,False
+DXS,Bất động sản,2021-07-15,0.3702830188679245,0,15.09675,False,dữ liệu bắt đầu sau 2018-06-01,,False
+GVR,Vật liệu,2018-03-21,0.002830188679245338,14,82.32864595000001,False,14 phiên |r| > 7.5% (lịch sử ngoài HOSE?),,False
+HHV,Công nghiệp,2015-12-18,0.004245283018867951,100,59.05105398999999,False,100 phiên |r| > 7.5% (lịch sử ngoài HOSE?),,False
+HNG,Nông nghiệp,2015-07-20,0.0037735849056603765,13,15.31722,False,13 phiên |r| > 7.5% (lịch sử ngoài HOSE?),,False
+HVN,Công nghiệp,2017-01-03,0.0033018867924528017,3,32.97045,False,3 phiên |r| > 7.5% (lịch sử ngoài HOSE?),,False
+LPB,Ngân hàng,2017-10-05,0.004716981132075526,13,83.2944,False,13 phiên |r| > 7.5% (lịch sử ngoài HOSE?),,False
+MSB,Ngân hàng,2020-12-23,0.3042452830188679,0,71.38877090000001,False,dữ liệu bắt đầu sau 2018-06-01,,False
+MSH,Tiêu dùng,2018-11-28,0.05990566037735845,0,5.905018300000001,False,dữ liệu bắt đầu sau 2018-06-01,,False
+OCB,Ngân hàng,2021-01-28,0.3160377358490566,0,23.145015,False,dữ liệu bắt đầu sau 2018-06-01,,False
+ORS,Chứng khoán,2015-01-05,0.004245283018867951,80,42.2037,False,80 phiên |r| > 7.5% (lịch sử ngoài HOSE?),,False
+SHB,Ngân hàng,2015-01-05,0.0014150943396226134,42,698.17062,False,42 phiên |r| > 7.5% (lịch sử ngoài HOSE?),,False
+SSB,Ngân hàng,2021-03-24,0.33207547169811324,0,33.75038,False,dữ liệu bắt đầu sau 2018-06-01,,False
+SZC,Bất động sản,2019-01-15,0.07499999999999996,0,26.541484080000004,False,dữ liệu bắt đầu sau 2018-06-01,,False
+TDM,Năng lượng,2016-04-01,0.009433962264150941,9,0.12429856,False,9 phiên |r| > 7.5% (lịch sử ngoài HOSE?),,False
+VCG,Công nghiệp,2015-01-05,0.002358490566037763,13,112.60758368,False,13 phiên |r| > 7.5% (lịch sử ngoài HOSE?),,False
+VIB,Ngân hàng,2017-01-09,0.0033018867924528017,4,89.09048567999999,False,4 phiên |r| > 7.5% (lịch sử ngoài HOSE?),,False
+VIX,Chứng khoán,2015-01-05,0.0033018867924528017,34,537.97532849,False,34 phiên |r| > 7.5% (lịch sử ngoài HOSE?),,False
+VND,Chứng khoán,2015-01-05,0.002830188679245338,11,227.48994576,False,11 phiên |r| > 7.5% (lịch sử ngoài HOSE?),,False

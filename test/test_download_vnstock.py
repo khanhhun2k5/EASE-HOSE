@@ -79,7 +79,7 @@ def clean_env(monkeypatch, tmp_path):
 # ----------------------------------------------------------------------------- hằng số
 def test_symbols_and_exchange():
     import config
-    assert D.SYMBOLS == config.SYMBOLS and len(D.SYMBOLS) == 20
+    assert D.SYMBOLS == config.SYMBOLS and len(D.SYMBOLS) == 60
     assert set(config.ORIGINAL_SYMBOLS) <= set(D.SYMBOLS)
     assert D.EXCHANGE == "HOSE"
 

@@ -12,6 +12,8 @@ thư mục này nếu cần đọc kèm.
 | 5 | Passeggeri, R., Wintenberger, O. (2024). *Extremes for stationary regularly varying random fields over arbitrary index sets*. Extremes 27. | [doi:10.1007/s10687-023-00481-x](https://doi.org/10.1007/s10687-023-00481-x) | Nền tảng lý thuyết biến thiên đều |
 | 6 | Agarwal, A., Singh, R. (2026). *Causal inference with noisy covariates: heteroscedastic measurement error and differential privacy*. Econometrica 94(5), 1887–1906. | Econometrica, tập 94 số 5 | Tham khảo suy luận nhân quả với biến có nhiễu |
 | 7 | Yang, S., Liang, V. C., Meel, K. S. *INC: A scalable incremental weighted sampler*. | [arXiv:2306.10824](https://arxiv.org/abs/2306.10824) | Tham khảo phụ |
+| 8 | Gu, S., Kelly, B., Xiu, D. (2021). *Autoencoder asset pricing models*. Journal of Econometrics 222(1), 429–450. | [doi:10.1016/j.jeconom.2020.07.009](https://doi.org/10.1016/j.jeconom.2020.07.009) | Nhân tố là danh mục tuyến tính, AE tuyến tính ≡ PCA, R² tổng ngoài mẫu (Calibration 04) |
+| 9 | Spilak, B., Härdle, W. K. (2022). *Does non-linear factorization of financial returns help build better and stabler portfolios?* | [arXiv:2204.02757](https://arxiv.org/abs/2204.02757) | AE ReLU ràng buộc không âm, phạt trực giao/tương quan (Calibration 04) |
 
 Các phương pháp khác được trích dẫn trực tiếp trong docstring của `src/` và trong notebook (Ahn & Horenstein 2013;
 Fan, Liu, Wang 2018; Pasche và cs. 2023; Peters & Bühlmann 2015; Shimizu và cs. 2006; Hyvärinen & Smith 2013;

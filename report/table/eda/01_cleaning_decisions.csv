@@ -1,7 +1,10 @@
 ﻿Vấn đề,Phát hiện,Quyết định
 Phiên VHM trước 17/05/2018,"Giá đứng, khối lượng ≈ 0 (chưa niêm yết HOSE)",Loại khỏi phân tích (cờ is_listed = false)
-Khung phân tích chung,"TCB niêm yết 04/06/2018, VHM 17/05/2018, VPB 08/2017, NVL 12/2016; 16 mã còn lại có dữ liệu từ 2015 hoặc sớm hơn",Dùng 01/06/2018 → phiên cuối cho mọi mã; TCB thiếu 2 phiên đầu khung (loại bằng dropna khi cần ma trận chung)
-Mã mới có dữ liệu ngắn hơn lịch sử,15 mã mới không có giá 'ảo' trước niêm yết trong nguồn VCI,"Dùng nguyên, chỉ cắt theo khung chung"
+Khung phân tích chung,"Mã có dữ liệu muộn nhất: TCB 04/06/2018, VHM 17/05/2018, FRT 26/04/2018, TPB 19/04/2018, HDB 05/01/2018; các mã khác có dữ liệu từ 2017 hoặc sớm hơn",Dùng 01/06/2018 → phiên cuối cho mọi mã; loại các phiên có mã thiếu bằng dropna khi cần ma trận chung
+Phiên thiếu trong khung,TCB 2 phiên đầu khung; POW 9 phiên (đầu 2019) và DGC 6 phiên (giữa 2020) không giao dịch — trùng thời điểm chuyển lên HOSE,Loại các phiên này khỏi ma trận chung (dropna); lợi suất phiên kế tiếp gộp cả khoảng trống
+Mã không có giá 'ảo' trước niêm yết,"Ngoài VHM, không mã nào có phiên giá đứng khối lượng 0 trước niêm yết trong nguồn VCI","Dùng nguyên, chỉ cắt theo khung chung"
+Lịch sử ngoài HOSE,"Trước 2018: ANV, CTS, DGC, GEX có phiên |r| > 7,5% (giao dịch ở sàn khác); trong khung: DGC 2 phiên (HNX đến 2020), POW 1 phiên (UPCoM 07/2018)",Giữ (tiêu chí chọn mã cho phép ≤ 2 phiên); 3 phiên này nằm trong số phiên cực trị nên được ghi nhận khi diễn giải
+Lỗi giá nguồn,GEX 12/08/2016 giá đóng cửa = 0; HCM 05/06/2020 giá mở cửa < giá thấp nhất; NLG 21–24/08/2015 giá mở cửa > giá cao nhất,"GEX: loại dòng khi nạp (sql/02_load_raw.sql, close > 0); HCM, NLG: giữ (chỉ ảnh hưởng gap_ret, NLG ngoài khung)"
 Biên độ giá HOSE ±7%,Lợi suất ngày bị chặn hai đầu,Giữ nguyên; lưu ý khi ước lượng đuôi (notebook 03)
 Giá đã điều chỉnh,Nguồn VCI điều chỉnh theo sự kiện quyền,Dùng trực tiếp để tính lợi suất
 Đơn vị,Giá: nghìn đồng; khối lượng: cổ phiếu,"Giữ nguyên, ghi trong data_dictionary.md"

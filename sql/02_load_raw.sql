@@ -12,6 +12,9 @@ SELECT symbol,
        CAST(volume AS BIGINT) AS volume,
        exchange
 FROM read_csv('data/raw/hose_ohlcv_long.csv', header = true, auto_detect = true)
+-- Giá đóng cửa ≤ 0 là lỗi nguồn (GEX 12/08/2016: close = 0 trong khi open/high/low > 0) → bỏ dòng,
+-- nếu không LN(close / prev_close) = ±∞ làm hỏng mọi thống kê. Ghi trong data/data_dictionary.md mục 6.
+WHERE close > 0
 ORDER BY symbol, time;
 
 -- Danh mục mã từ file tham chiếu (nguồn duy nhất, sửa tay). listing_date để trống -> ngày đầu tiên có
