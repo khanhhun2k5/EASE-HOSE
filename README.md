@@ -15,9 +15,9 @@ Việt Nam: biên độ giá ±7%, biến động cụm, nhân tố thị trư�
 | EDA | `notebook/EDA/` | Mô tả, phân phối, đuôi dày, biên độ ±7%, biến động cụm, phụ thuộc đuôi, PCA, Granger |
 | Processing | `notebook/Processing/` | Lọc GARCH-t, hệ số nhân quả đuôi Ψ/Γ, EASE, mô phỏng và so sánh baseline |
 | Validation | `notebook/Validation/` | Nhân tố thị trường, kiểm định hoán vị, ổn định theo thời gian, mô phỏng hiệu chỉnh |
-| Calibration | `notebook/Calibration/` | Chọn siêu tham số (GARCH, số nhân tố, k), EASE sau khi khử nhân tố, Granger trong đuôi, khử nhân tố phi tuyến bằng autoencoder trên bảng 60 mã (04) |
+| Calibration | `notebook/Calibration/` | Chọn siêu tham số (GARCH, số nhân tố, k), EASE sau khi khử nhân tố, Granger trong đuôi, khử nhân tố phi tuyến bằng autoencoder trên bảng 60 mã (04), biên độ ±7% theo mô hình CAcF có kiểm duyệt (05) |
 
-Mỗi giai đoạn có một notebook tổng hợp phát hiện (`*_finding.ipynb`). Hình lưu ở `report/figure/<giai đoạn>/`,
+Mỗi giai đoạn có một notebook tổng hợp phát hiện (`*_finding.ipynb`). Hình PNG lưu ở `report/figure/<giai đoạn>/`, bản PDF (vector) ở `report/pdf/<giai đoạn>/`,
 bảng ở `report/table/<giai đoạn>/`. Từ điển dữ liệu: [`data/data_dictionary.md`](data/data_dictionary.md).
 Danh mục 60 mã và ngành (20 mã vốn hoá lớn + 40 mã bổ sung chọn bằng tiêu chí dữ liệu): [`data/reference/symbol_meta.csv`](data/reference/symbol_meta.csv). Tài liệu tham khảo: [`Paper/README.md`](Paper/README.md).
 
@@ -34,6 +34,7 @@ Danh mục 60 mã và ngành (20 mã vốn hoá lớn + 40 mã bổ sung chọn 
 | `src/download_extended.py` | Tải 90 ứng viên HOSE, chọn 40 mã bổ sung theo tiêu chí dữ liệu (đủ lịch sử, thuần HOSE, thanh khoản cao) |
 | `src/nonlinear_factor.py` | PCA, autoencoder tuyến tính / ReLU (Spilak–Härdle) / hệ số tải phi tuyến (theo Gu–Kelly–Xiu), cross-fitting, R² đuôi, β tăng/giảm, mô phỏng nhân tố bất đối xứng |
 | `src/calibration.py` | Số nhân tố Ahn–Horenstein, mô hình nhân tố Kendall, hệ số đuôi có điều kiện thị trường, Granger trong đuôi |
+| `src/price_limit.py` | Biên độ ±7% (Xu–Shu–Chen 2024): CAcF/AcF cho lỗ lớn nhất toàn thị trường (MLE có kiểm duyệt, xác suất chạm sàn, EVaR), GARCH–t có kiểm duyệt + số hạng bù ngưỡng, điền nhiều lần phần dư phiên chạm biên, EASE nhiều lần điền, mô phỏng SCM có ngưỡng tuyệt đối |
 
 ## Cài đặt và chạy
 
@@ -52,3 +53,4 @@ Sau đó chạy notebook theo thứ tự EDA → Processing → Validation → C
 ## Tình trạng
 
 Ngày 26/11/2026 mẫu nghiên cứu được mở rộng từ 20 lên **60 mã**.
+Cùng ngày bổ sung Calibration 05 (biên độ ±7% theo Xu, Shu & Chen 2024) và Phát hiện 6 trong `Calibration_finding.ipynb`.
